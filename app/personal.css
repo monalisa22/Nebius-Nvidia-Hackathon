@@ -1,0 +1,762 @@
+:root {
+  --bg: #fcfcfb;
+  --ink: #293330;
+  --green: #226e5c;
+  --green-dark: #185242;
+  --coral: #ae3d60;
+  --pale-coral: #faedf1;
+  --font-story: Georgia, "Times New Roman", serif;
+}
+body {
+  overflow-wrap: anywhere;
+}
+
+.togetherly-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  text-align: left;
+}
+.togetherly-mark {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  transition: transform 220ms ease;
+}
+.togetherly-copy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.togetherly-wordmark,
+.personal-shell .mobile-brand .togetherly-wordmark {
+  color: #204d43;
+  font: 600 32px/1 var(--font-story);
+  white-space: nowrap;
+}
+.togetherly-wordmark > span {
+  color: #a44f62;
+  font-style: italic;
+}
+.togetherly-tagline,
+.personal-shell .mobile-brand .togetherly-tagline,
+.personal-shell .brand .togetherly-tagline {
+  margin: 0;
+  color: #62736b;
+  font: 400 11px/1.45 var(--font-sans);
+  max-width: 260px;
+  text-wrap: balance;
+}
+a:hover .togetherly-mark {
+  transform: rotate(-7deg);
+}
+.personal-shell .brand .togetherly-brand {
+  gap: 9px;
+}
+.personal-shell .brand .togetherly-mark {
+  width: 40px;
+  height: 40px;
+}
+.personal-shell .brand .togetherly-wordmark {
+  font-size: 27px;
+}
+
+/* The everyday app is an open album. Management lives in an on-demand drawer. */
+.personal-shell {
+  display: block;
+}
+.personal-shell .workspace {
+  grid-column: auto;
+}
+.personal-shell .sidebar {
+  width: 292px;
+  max-width: calc(100% - 24px);
+  z-index: 50;
+  transform: translateX(-105%);
+  transition: transform 220ms ease;
+}
+.personal-shell .sidebar.sidebar-open {
+  transform: translateX(0);
+  box-shadow: 12px 0 50px #263b3418;
+}
+.personal-shell .sidebar-close {
+  display: inline-flex;
+  align-self: flex-end;
+  margin: -12px -4px 8px 0;
+}
+.personal-shell .sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  border: 0;
+  background: #253b3459;
+}
+.personal-shell .mobile-menu {
+  display: inline-flex;
+}
+.personal-shell .topbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-height: 100px;
+  height: auto;
+  padding-block: 18px;
+  padding-inline: max(24px, calc((100% - 1160px) / 2));
+  background: var(--surface);
+  gap: 20px;
+  box-shadow: 0 3px 18px #204d4304;
+}
+.personal-shell .topbar-left {
+  gap: 10px;
+}
+.personal-shell .topbar-actions {
+  justify-self: end;
+  gap: 4px;
+}
+.personal-shell .topbar-actions .icon-button {
+  width: 44px;
+  border-radius: 50%;
+}
+.personal-shell .mobile-brand {
+  display: flex;
+  min-width: 0;
+}
+.desktop-tabs {
+  display: flex;
+  justify-self: center;
+  gap: 6px;
+}
+.desktop-tabs a {
+  min-height: 46px;
+  padding: 10px 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  transition:
+    color 160ms,
+    border-color 160ms,
+    background-color 160ms;
+}
+.desktop-tabs a:hover {
+  color: var(--green);
+  background: #f4f8f6;
+}
+.desktop-tabs a[aria-current="page"] {
+  color: var(--green-dark);
+  border-bottom-color: var(--green);
+  font-weight: 600;
+}
+.tab-unread {
+  min-width: 19px;
+  padding: 1px 5px;
+  background: var(--pale-coral);
+  color: var(--coral);
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+}
+.personal-shell .page-content {
+  max-width: 1160px;
+  padding: 36px 32px 0;
+}
+.personal-shell .page-heading {
+  margin-bottom: 26px;
+}
+.personal-shell .page-heading > div {
+  min-width: 0;
+}
+.personal-shell .page-heading h1 {
+  font: 400 36px/1.2 var(--font-story);
+}
+.personal-shell .page-heading .eyebrow {
+  font-size: 13px;
+}
+.personal-shell .button {
+  border-radius: 8px;
+}
+.personal-shell .button.primary {
+  box-shadow: 0 3px 0 #16493612;
+}
+.personal-shell .page-heading .button {
+  padding-inline: 20px;
+}
+.personal-shell .text-size[aria-pressed="true"] {
+  background: var(--pale-green);
+  color: var(--green);
+}
+
+.family-circle {
+  margin-bottom: 32px;
+}
+.family-circle-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 8px 4px;
+  overflow-x: auto;
+}
+.circle-person {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  width: 90px;
+  flex: 0 0 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.circle-portrait {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #eff1ee;
+  padding: 4px;
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition:
+    transform 180ms,
+    outline-color 180ms;
+}
+.circle-person .avatar {
+  width: 60px;
+  height: 60px;
+  border: 2px solid white;
+}
+.circle-tone-0 .circle-portrait {
+  background: #f4dfe7;
+}
+.circle-tone-1 .circle-portrait {
+  background: #e0eee7;
+}
+.circle-tone-2 .circle-portrait {
+  background: #e3eaf7;
+}
+.circle-everyone .circle-portrait {
+  color: var(--coral);
+  background: var(--pale-coral);
+}
+.circle-person[aria-pressed="true"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+.circle-person[aria-pressed="true"] .circle-portrait {
+  outline-color: var(--green);
+}
+.circle-more .circle-portrait {
+  border: 1px dashed #9daea6;
+  background: transparent;
+  color: var(--green);
+}
+.circle-person:hover .circle-portrait {
+  transform: translateY(-3px);
+}
+
+.personal-shell .moments-section {
+  margin-bottom: 40px;
+}
+.personal-shell .moments-section .section-heading {
+  margin-bottom: 10px;
+}
+.personal-shell .moments-section h2 {
+  font: 400 29px/1.25 var(--font-story);
+}
+.shelf-tools,
+.shelf-navigation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.shelf-navigation .icon-button {
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+}
+.shelf-navigation .icon-button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.rediscover-button {
+  color: var(--coral) !important;
+}
+.personal-shell .moments-strip {
+  grid-auto-columns: minmax(260px, 1fr);
+  gap: 26px;
+  margin: -4px -10px;
+  padding: 16px 10px 28px;
+  scroll-padding-inline: 10px;
+}
+.moment-shell {
+  position: relative;
+  min-width: 0;
+  height: 350px;
+  scroll-snap-align: start;
+  --album-bg: #faeaf0;
+  --album-ink: #79374c;
+  --album-tilt: -1.2deg;
+  transform: rotate(var(--album-tilt));
+  animation: album-arrive 420ms ease-out both;
+  transition:
+    transform 220ms ease,
+    filter 220ms;
+}
+.moment-shell.green {
+  --album-bg: #e4f1e7;
+  --album-ink: #2c5744;
+  --album-tilt: 1.4deg;
+  animation-delay: 70ms;
+}
+.moment-shell.blue {
+  --album-bg: #f8efd7;
+  --album-ink: #635023;
+  --album-tilt: -0.6deg;
+  animation-delay: 140ms;
+}
+.personal-shell .moment-cover {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  gap: 14px;
+  grid-template-rows: minmax(0, 1fr) auto;
+  background: var(--album-bg);
+  color: var(--album-ink);
+  border: 1px solid #29333012;
+  border-radius: 8px;
+  box-shadow:
+    0 6px 12px #27382e0a,
+    0 2px 2px #27382e08;
+}
+.moment-visual {
+  display: block;
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.moment-visual > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 350ms;
+}
+.personal-shell .moment-art {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  gap: 15px;
+  background: var(--album-bg);
+  animation: memory-reveal 200ms ease-out;
+}
+.personal-shell .moment-art-excerpt {
+  font: 400 22px/1.4 var(--font-story);
+  -webkit-line-clamp: 4;
+}
+.moment-byline {
+  font: 12px/1.4 var(--font-sans);
+}
+.personal-shell .moment-cover-caption {
+  padding: 0 6px 6px;
+  background: transparent;
+}
+.personal-shell .moment-cover-caption strong {
+  font: 400 25px/1.2 var(--font-story);
+}
+.personal-shell .moment-cover-caption > span {
+  font-size: 12px;
+  margin-top: 9px;
+}
+.album-arrow {
+  transform: rotate(-35deg);
+}
+.album-stamp {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  background: #fffffff2;
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: var(--ink);
+  font-size: 11px;
+}
+.moment-peek {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  width: 44px;
+  height: 44px;
+  background: #fffffff2;
+  color: var(--ink);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #00000012;
+}
+.moment-peek[aria-pressed="true"] {
+  background: var(--album-ink);
+  color: white;
+}
+.moment-shell:focus-within {
+  z-index: 1;
+}
+@media (hover: hover) {
+  .moment-shell:hover {
+    transform: translateY(-5px) rotate(0);
+  }
+  .moment-shell:hover .moment-visual > img {
+    transform: scale(1.025);
+  }
+  .moment-shell:hover .album-arrow {
+    transform: translate(2px, -2px) rotate(-35deg);
+  }
+}
+@keyframes album-arrive {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes memory-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.personal-shell .journey-item {
+  animation: memory-reveal 220ms ease-out;
+}
+
+.personal-home .today-grid {
+  display: block;
+}
+.personal-home .today-main {
+  max-width: 780px;
+  margin-inline: auto;
+}
+.personal-home .today-main .section-heading h2,
+.personal-home .today-aside > .section-heading h2 {
+  font: 400 27px/1.3 var(--font-story);
+}
+.personal-home .featured-image-button {
+  height: 380px;
+}
+.personal-home .featured-copy h2 {
+  font: 400 29px/1.25 var(--font-story);
+}
+.personal-home .featured-copy > p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.personal-home .featured-copy {
+  padding: 24px 0 0;
+}
+.personal-home .today-aside {
+  max-width: 780px;
+  margin: 40px auto 0;
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+}
+.personal-home .today-aside > .section-heading {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.personal-home .today-aside .call-card {
+  grid-column: 1;
+  grid-row: 2;
+  background: #eef4fb;
+  padding: 24px;
+}
+.personal-home .today-aside .review-nudge {
+  grid-column: 1;
+  grid-row: 3;
+  margin: 0;
+}
+.personal-home .today-aside .briefing-section {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+}
+.personal-shell .person-card {
+  box-shadow: none;
+  border: 0;
+  background: #f2f5f3;
+}
+.personal-shell .person-card:nth-child(3n + 2) {
+  background: #faf0f3;
+}
+.personal-shell .person-card:nth-child(3n) {
+  background: #eef3fa;
+}
+.personal-shell .person-card h2 {
+  font-family: var(--font-story);
+  font-size: 27px;
+  font-weight: 400;
+}
+.personal-shell .memory-card {
+  box-shadow: 0 3px 12px #29333008;
+}
+.personal-shell .memory-card-copy > strong {
+  font: 400 23px/1.3 var(--font-story);
+}
+.personal-shell .workspace-footer {
+  font-size: 12px;
+}
+
+@media (max-width: 1200px) {
+  .personal-shell .topbar {
+    grid-template-columns: 1fr auto;
+    padding-inline: 24px;
+    min-height: 96px;
+  }
+  .desktop-tabs {
+    display: none;
+  }
+  .personal-shell .workspace {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+  .personal-shell .mobile-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    min-height: 76px;
+    padding: 8px max(8px, calc((100% - 540px) / 2))
+      calc(8px + env(safe-area-inset-bottom));
+    background: #fffffff5;
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+  }
+  .personal-shell .mobile-tabs a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 54px;
+    min-width: 0;
+    position: relative;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .personal-shell .mobile-tabs a[aria-current="page"] {
+    color: var(--green-dark);
+    font-weight: 600;
+  }
+  .personal-shell .mobile-tabs a[aria-current="page"] svg {
+    background: var(--pale-green);
+    box-shadow: 0 0 0 6px var(--pale-green);
+    border-radius: 4px;
+  }
+  .personal-shell .mobile-tabs i {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--coral);
+    border-radius: 50%;
+    top: 4px;
+    right: 30%;
+  }
+  .personal-shell .toast {
+    bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+  .personal-shell .moments-strip {
+    grid-auto-columns: minmax(260px, 42%);
+  }
+}
+@media (max-width: 720px) {
+  .personal-shell .topbar {
+    min-height: 94px;
+    padding: 12px 10px;
+    gap: 8px;
+  }
+  .personal-shell .topbar-left {
+    gap: 3px;
+  }
+  .personal-shell .mobile-brand .togetherly-brand {
+    gap: 8px;
+  }
+  .personal-shell .mobile-brand .togetherly-mark {
+    width: 32px;
+    height: 32px;
+  }
+  .personal-shell .mobile-brand .togetherly-copy {
+    max-width: 170px;
+  }
+  .personal-shell .mobile-brand .togetherly-wordmark {
+    font-size: 26px;
+  }
+  .personal-shell .topbar-actions .topbar-search {
+    display: none;
+  }
+  .personal-shell .topbar-actions .avatar {
+    display: none;
+  }
+  .personal-shell .topbar-actions {
+    gap: 0;
+  }
+  .personal-shell .page-content {
+    padding: 28px 20px 0;
+  }
+  .personal-shell .page-heading {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .personal-shell .page-heading h1 {
+    font-size: 32px;
+  }
+  .personal-shell .page-heading .button {
+    font-size: 14px;
+    margin: 0;
+    max-width: 100%;
+    padding-inline: 14px;
+  }
+  .personal-home .page-heading .button {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  .personal-home .heading-action-label {
+    display: none;
+  }
+  .personal-home .page-heading .button svg {
+    width: 22px;
+    height: 22px;
+  }
+  .family-circle-track {
+    gap: 10px;
+  }
+  .circle-person {
+    width: 76px;
+    flex-basis: 76px;
+    font-size: 13px;
+  }
+  .circle-portrait {
+    width: 60px;
+    height: 60px;
+  }
+  .circle-person .avatar {
+    width: 52px;
+    height: 52px;
+  }
+  .family-circle {
+    margin-bottom: 26px;
+  }
+  .personal-shell .moments-section h2 {
+    font-size: 27px;
+  }
+  .personal-shell .moments-section .section-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .shelf-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .rediscover-button {
+    padding-left: 0 !important;
+  }
+  .personal-shell .moments-strip {
+    grid-auto-columns: minmax(250px, 84%);
+    gap: 20px;
+  }
+  .moment-shell {
+    height: 300px;
+  }
+  .personal-home .featured-image-button {
+    height: 280px;
+  }
+  .personal-home .today-main .section-heading {
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .personal-home .today-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .personal-home .today-aside .briefing-section {
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .personal-shell .workspace-footer {
+    flex-wrap: wrap;
+  }
+  .personal-shell .moment-art-excerpt {
+    font-size: 21px;
+    -webkit-line-clamp: 3;
+  }
+}
+@media (max-width: 370px) {
+  .personal-shell .mobile-brand .togetherly-brand {
+    gap: 6px;
+  }
+  .personal-shell .mobile-brand .togetherly-mark {
+    width: 28px;
+    height: 28px;
+  }
+  .personal-shell .mobile-brand .togetherly-copy {
+    max-width: 128px;
+  }
+  .personal-shell .mobile-brand .togetherly-wordmark {
+    font-size: 22px;
+  }
+  .personal-shell .topbar {
+    padding-inline: 6px;
+    gap: 4px;
+  }
+  .personal-shell .page-content {
+    padding-inline: 16px;
+  }
+  .personal-shell .moments-strip {
+    grid-auto-columns: 92%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .togetherly-mark {
+    transition: none;
+  }
+  .personal-shell *,
+  .personal-shell *::before,
+  .personal-shell *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .moment-shell:hover {
+    transform: rotate(var(--album-tilt));
+  }
+  .circle-person:hover .circle-portrait {
+    transform: none;
+  }
+  .moment-shell:hover .moment-visual > img {
+    transform: none;
+  }
+}

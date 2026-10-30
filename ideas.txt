@@ -1,0 +1,527 @@
+Personal AI Track Ideas
+
+For the Personal AI track, the strongest project should be more than a chat assistant. It should demonstrate persistent memory, user-controlled data, reusable skills, selective tool access, and the ability to complete recurring personal workflows. The official track also emphasizes privacy and an assistant that remains under the user’s control.
+
+Below are 12 differentiated ideas, followed by the three I think offer the best winning potential.
+
+1. PromiseKeeper: Personal Commitment Memory
+Problem
+
+People make commitments across meetings, messages, notes, and conversations, but those promises become scattered across multiple applications.
+
+Examples:
+
+“I’ll send the design tomorrow.”
+“Let’s review this after the release.”
+“I need to follow up with the testing team.”
+“Remind me to update the document after receiving feedback.”
+Solution
+
+Build a private assistant that extracts possible commitments from user-approved sources and maintains a personal commitment ledger.
+
+Each commitment contains:
+
+The original source
+What was promised
+Who is involved
+Expected completion date
+Dependencies
+Confidence score
+Current status
+Suggested next action
+Important privacy feature
+
+The assistant should not automatically convert every statement into a task. It asks the user to approve uncertain commitments and lets the user:
+
+Correct extracted information
+Restrict specific sources
+Delete individual memories
+Set memory expiration dates
+Review why a reminder was created
+Memorable differentiator
+
+Every reminder comes with evidence showing when and why the commitment was created.
+
+Winning demo
+Import three sample meeting transcripts.
+Extract five possible commitments.
+Accept three and reject two.
+Show an overdue dependency.
+Generate a morning briefing.
+Complete one commitment.
+Delete its source and demonstrate that associated memory is also removed.
+Difficulty
+
+Medium
+
+Winning potential
+
+Very high
+
+2. ResumePoint: Personal Work Recovery Agent
+Problem
+
+After meetings, urgent requests, or several days away from a task, people spend considerable time reconstructing what they were doing.
+
+Solution
+
+Build an assistant that creates an intelligent work checkpoint whenever a person stops working.
+
+A checkpoint records:
+
+The user’s current objective
+Files involved
+Work already completed
+Last verified result
+Unresolved questions
+Assumptions
+Blockers
+The smallest useful next action
+
+When the person returns, ResumePoint provides a short recovery briefing and reopens the relevant context.
+
+Reusable skills
+Checkpoint current activity
+Resume a previous activity
+Compare two checkpoints
+Find abandoned tasks
+Detect stale assumptions
+Create a handover summary
+Unique feature
+
+The assistant distinguishes among:
+
+Fact: Verified from a source
+Assumption: Temporarily accepted by the user
+Decision: Explicitly selected
+Open question: Requires further investigation
+
+This prevents the assistant from presenting an old assumption as a confirmed fact.
+
+Strong demo
+
+Start a coding task, pause halfway, introduce an interruption, and then show the assistant reconstructing the task with the exact next action.
+
+Difficulty
+
+Medium
+
+Winning potential
+
+Very high
+
+3. BoundaryAI: Personal Context Privacy Firewall
+Problem
+
+Users frequently copy sensitive documents or personal context into AI applications without knowing how much information is necessary for the task.
+
+Solution
+
+BoundaryAI sits between the user’s private information and external tools.
+
+Before data leaves the user-controlled environment, it:
+
+Identifies sensitive context.
+Understands the intended task.
+Determines the minimum information required.
+Generates a redacted version.
+Explains what was removed and why.
+Requests permission before sharing.
+Records the decision in a local audit log.
+Example
+
+The user asks an external writing tool:
+
+Rewrite this project update.
+
+The original text contains names, customer identifiers, internal URLs, dates, and infrastructure details. BoundaryAI creates a sanitized version while preserving the information needed for rewriting.
+
+Memory system
+
+The assistant can remember rules such as:
+
+Never share customer names.
+Remove internal repository URLs.
+Allow my first name in professional messages.
+Ask every time before sharing location information.
+Delete temporary permissions after 24 hours.
+Distinctive value
+
+This flips the usual Personal AI concept. Instead of collecting more information, the assistant protects the user by exposing less information.
+
+Difficulty
+
+Medium to high
+
+Winning potential
+
+Very high
+
+4. DecisionTimeMachine: Personal Decision Memory
+Problem
+
+People remember a decision but often forget:
+
+Why it was made
+Which alternatives were rejected
+What assumptions supported it
+When it should be reviewed
+Whether those assumptions are still valid
+Solution
+
+Create a private decision-memory assistant.
+
+For every meaningful decision, it stores:
+
+Decision statement
+Date
+Supporting evidence
+Considered alternatives
+Assumptions
+Expected outcome
+Review date
+Reversal conditions
+
+The assistant periodically checks whether the original assumptions remain valid.
+
+Example
+
+A user decides to use a specific software library because it supports a required feature. Three months later, the assistant detects that another library now supports that feature and recommends reviewing the original decision.
+
+Standout feature
+
+A decision expiration system identifies decisions that may no longer be appropriate because their context has changed.
+
+Difficulty
+
+Medium
+
+Winning potential
+
+High
+
+5. SkillVault: User-Owned Personal Skills Assistant
+Problem
+
+Most assistants execute ad hoc prompts. Users repeatedly explain the same process because the assistant cannot turn successful workflows into reusable, inspectable skills.
+
+Solution
+
+SkillVault observes a user completing a workflow and converts it into a reusable personal skill.
+
+For example:
+
+Prepare my weekly update.
+Review a pull request using my checklist.
+Organize meeting notes.
+Create an end-of-day summary.
+Convert bug reports into structured tickets.
+Prepare questions before a technical meeting.
+
+Each skill includes:
+
+Required inputs
+Permitted data sources
+Tool permissions
+Processing steps
+Expected output
+Approval checkpoints
+Failure conditions
+Important safety mechanism
+
+Before executing a skill, the assistant previews:
+
+What it will access
+Which tools it will use
+What it will modify
+Whether external communication is involved
+Unique feature
+
+The user can inspect, edit, export, or delete every skill. This makes the system genuinely user-controlled rather than an opaque automation engine.
+
+Difficulty
+
+High
+
+Winning potential
+
+High, especially with a polished interface
+
+6. MeetingMemory with Controlled Forgetting
+Problem
+
+Meeting assistants generally store everything or forget everything. Neither approach gives users meaningful control.
+
+Solution
+
+Create a meeting-memory assistant in which every memory has:
+
+Source
+Owner
+Purpose
+Expiration date
+Sensitivity level
+Confidence
+People allowed to see it
+
+After a meeting, the assistant separates:
+
+Decisions
+Commitments
+Questions
+Risks
+Temporary context
+Information that should not be remembered
+Signature feature: Forgetting policies
+
+Users can create policies such as:
+
+Delete raw transcripts after seven days.
+Preserve confirmed decisions for one year.
+Retain action items until completion.
+Never store casual discussion.
+Ask before remembering personal information.
+Remove rejected ideas after the project ends.
+Why it stands out
+
+Many projects demonstrate memory. Very few demonstrate responsible forgetting, which strongly supports the Personal AI track’s privacy theme.
+
+Difficulty
+
+Medium
+
+Winning potential
+
+High
+
+7. Personal Knowledge Contradiction Detector
+Problem
+
+Personal notes often contain outdated or contradictory information.
+
+For example:
+
+One note says an API does not support streaming.
+A later note says it does.
+A project plan references an old deadline.
+Two documents assign the same responsibility to different people.
+Solution
+
+Build an agent that scans user-approved personal notes and identifies:
+
+Contradictions
+Outdated assumptions
+Duplicate information
+Unverified claims
+Missing sources
+Conflicting deadlines
+
+It never silently rewrites the user’s knowledge. Instead, it creates a review queue showing both pieces of evidence.
+
+Useful controls
+Mark one statement as current
+Preserve both as context-dependent
+Add a missing condition
+Set a review date
+Delete outdated information
+Exclude a source from future analysis
+Unique differentiator
+
+This is not document question-answering. It is personal knowledge maintenance.
+
+Difficulty
+
+Medium
+
+Winning potential
+
+High
+
+8. Personal Learning Evidence Coach
+Problem
+
+Most learning assistants generate courses and quizzes, but they do not maintain reliable evidence of what a user can actually do.
+
+Solution
+
+Create a private assistant that builds a personal capability graph.
+
+Each skill can have one of these states:
+
+Introduced
+Practised
+Demonstrated
+Applied independently
+Needs revision
+
+The assistant moves a skill forward only when the user provides evidence, such as:
+
+A completed project
+An explanation
+A code sample
+A solved exercise
+A retrospective
+A practical demonstration
+Workflow
+User selects a target skill.
+Assistant examines existing evidence.
+It identifies the smallest missing capability.
+It creates a practical exercise.
+The user submits a solution.
+The assistant evaluates it using a transparent rubric.
+The capability graph is updated.
+Unique feature
+
+The system distinguishes “I have read about this” from “I can demonstrate this.”
+
+Difficulty
+
+Medium
+
+Winning potential
+
+Medium to high
+
+9. Focus Contract Agent
+Problem
+
+Traditional productivity applications block websites or send reminders, but they do not understand the user’s intended outcome.
+
+Solution
+
+At the beginning of a focus session, the user creates a small contract:
+
+Desired outcome
+Time available
+Permitted tools
+Likely distractions
+Completion evidence
+
+The assistant tracks progress using only user-approved signals. If the user deviates, it asks a contextual question instead of simply blocking access.
+
+Example
+
+The user’s objective is to finish a technical design. Opening documentation may be useful, while opening unrelated social media is probably a distraction.
+
+End-of-session output
+Intended outcome
+Actual result
+Interruptions
+Decisions made
+Unresolved questions
+Recommended next checkpoint
+Difficulty
+
+Medium
+
+Winning potential
+
+Medium
+
+10. Personal Operations Manual
+Problem
+
+People repeatedly answer questions about their own preferences and workflows:
+
+How do I like meeting notes structured?
+What information do I need before reviewing an issue?
+How do I prioritize tasks?
+What should be included in my weekly update?
+Solution
+
+Build an assistant that gradually creates a private, user-owned “operations manual.”
+
+It learns only from explicit corrections and approvals, such as:
+
+“Keep weekly updates under six bullets.”
+“Separate blockers from risks.”
+“Do not schedule focused work in the late afternoon.”
+“Always include source links in research notes.”
+Essential control
+
+The interface shows:
+
+What the assistant believes
+Why it believes it
+When the preference was learned
+Where it is being used
+How to correct or delete it
+Differentiator
+
+The assistant does not claim to understand the user invisibly. Its personalization is transparent, editable, and evidence-backed.
+
+Difficulty
+
+Medium
+
+Winning potential
+
+Medium to high
+
+11. Life Admin Inbox
+Problem
+
+Important personal administrative items become scattered across documents, email exports, screenshots, and notes.
+
+Solution
+
+Create a private inbox that converts user-provided items into structured, non-financial administrative workflows, such as:
+
+Document renewal reminders
+Form submission deadlines
+Warranty expiration dates
+Subscription cancellation reminders
+Return windows
+Appointment preparation checklists
+Required supporting documents
+Personal AI capabilities
+Persistent deadline memory
+Document classification
+Evidence-based reminders
+Reusable checklist skills
+User-controlled retention
+Local deletion and expiry
+Strong differentiator
+
+Every deadline points back to an exact document snippet, reducing fabricated or unexplained reminders.
+
+Difficulty
+
+Medium
+
+Winning potential
+
+Medium to high
+
+12. Relationship Context Assistant
+Problem
+
+Before meeting a colleague, mentor, or collaborator, users may forget previous discussion points, pending follow-ups, or agreed next steps.
+
+Solution
+
+Using only user-approved notes, the assistant prepares a private pre-meeting briefing:
+
+Last discussion
+Open commitments
+Topics to revisit
+Questions previously unanswered
+Relevant decisions
+Time-sensitive follow-upss
+Privacy controls
+Separate professional and personal contexts
+Do not infer sensitive characteristics
+Allow per-person memory deletion
+Set automatic memory expiration
+Show the source behind every surfaced detail
+Risk to manage
+
+Do not position it as surveillance or automatic profiling. Keep it focused on the user’s own notes, commitments, and explicitly stored context.
+
+Difficulty
+
+Medium
+
+Winning potential
+
+Medium
